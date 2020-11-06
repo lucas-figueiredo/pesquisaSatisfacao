@@ -26,10 +26,7 @@ constructor( private db: AngularFirestore ) {
 }
 
 usersCnpj = [
-'00103788000676',
-'00138093000115',
-'00172143000180',
-'00212675000366'
+'830600120001392020'
 ];
 
   currentUser: any;
@@ -37,8 +34,8 @@ usersCnpj = [
   respostasUsersGeral: any;
 
   ngOnInit() {
-
-    this.consultateste();
+    console.log("enter");
+    this.consultaUserResp();
 
   }
 

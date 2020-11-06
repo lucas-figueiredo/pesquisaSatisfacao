@@ -195,7 +195,8 @@ export class PesquisaReactiveFormComponent implements OnInit {
 
 
   clientesCNPJ() {
-    this.db.doc( 'clientesCNPJv2' + '/' + this.user + '@corfio.com').valueChanges().subscribe(
+    //console.log("clientesCNPJv2"+"/"+this.user+"2020@corfio.com");
+    this.db.doc( 'clientesCNPJv3' + '/' + this.user + '@corfio.com').valueChanges().subscribe(
       doc => this.cliente = doc['nome']
     );
   }
@@ -261,6 +262,7 @@ export class PesquisaReactiveFormComponent implements OnInit {
     if (this.contaRespostas >= 27)  {
       this.fim = true;
       let fim = this.fim;
+      //console.log("setting fim to "+this.fim);
       this.db.collection(this.user).doc('fim').set({fim});
       alert( 'Pesquisa concluida com sucesso, muito obrigado!' );
     } else {
@@ -269,7 +271,7 @@ export class PesquisaReactiveFormComponent implements OnInit {
   }
 
   getRespostas() {
-    alert(this.user);
+    //console.log(this.user+" getRespostas()");
     this.db.collection(this.user)
     .snapshotChanges()
     .pipe(map(docArray => {
@@ -285,6 +287,17 @@ export class PesquisaReactiveFormComponent implements OnInit {
       this.contaRespostas = from.length;
       return this.getRetornoResp;
     });
+
+    /*this.db.firestore.collection(this.user).doc('fim').get()
+    .then((docSnapshot) => {
+      if (!docSnapshot.exists) {
+          console.log("didn't exist, setting to "+this.fim);
+          let fim = this.fim;
+          this.db.doc(this.user+'/'+'fim').set({fim});
+      } else {
+        console.log("existed");
+      }
+    });*/
   }
 
 }
