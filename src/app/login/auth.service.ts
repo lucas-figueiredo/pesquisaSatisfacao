@@ -15,7 +15,7 @@ export class AuthService {
 
   login(authData: AuthData) {
     authData.usuario = authData.usuario + '2020' + '@corfio.com';
-    authData.senha = '123456';
+    authData.senha = '1234567';
     this.afAuth.auth.signInWithEmailAndPassword(
       authData.usuario,
       authData.senha
@@ -37,9 +37,9 @@ export class AuthService {
 
   getUrl() {
     let url = document.URL;
-    // use 45 for firebase and 32 for local test and 37 to pesquisa.corfio.com.br
+    // use 45 for firebase and 28 for local test and 37 to pesquisa.corfio.com.br
     //  url = url.slice(45);
-    // url = url.slice(32);
+    //url = url.slice(28);
     url = url.slice(37);
     console.log(url);
     return url;

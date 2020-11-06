@@ -1,8 +1,9 @@
 <section>
   <form [formGroup]="loginForm" class="flex-container" fxLayoutGap="10px" #form="ngForm" (ngSubmit)="onSubmit()" >
-      <h3 class="welcome">Olá, Informe seu CNPJ para começar</h3>
-      <h5 class="welcome" >Apenas numeros</h5>
-    <mat-form-field appearance="outline">
+      <!--<h3 class="welcome">Olá, Informe seu CNPJ para começar</h3>
+      <h5 class="welcome" >Apenas numeros</h5>-->
+      <h3 class="welcome">Pesquisa encerrada, obrigado pela participação!</h3>
+    <!--<mat-form-field appearance="outline">
       <mat-label>CNPJ</mat-label>
       <input autofocus id="userInput"  
        type="text" matInput formControlName="usuario" [matAutocomplete]="auto">       
@@ -17,7 +18,7 @@
       <mat-error>CNPJ Inválido</mat-error>
       <mat-icon matSuffix>person</mat-icon>
     </mat-form-field>
-    <button [disabled]="loginForm.invalid" mat-raised-button type="submit" color="primary">Entrar</button>
+    <button [disabled]="loginForm.invalid" mat-raised-button type="submit" color="primary">Entrar</button>-->
   </form>
 </section>
 
