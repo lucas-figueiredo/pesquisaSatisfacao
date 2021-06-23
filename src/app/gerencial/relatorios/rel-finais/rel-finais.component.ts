@@ -83,7 +83,7 @@ export class RelFinaisComponent implements OnInit {
       this.countRespostasObs = from.length;
       from.forEach( doc => {
         this.idClient = doc.id;
-        this.db.doc( 'clientesCNPJv3' + '/' + this.idClient + '@corfio.com' ).valueChanges().subscribe(
+        this.db.doc( 'clientesCNPJv4' + '/' + this.idClient + '@corfio.com' ).valueChanges().subscribe(
           dadosCompletos => {
             let arrayNom: string;
             arrayNom = dadosCompletos['nome'];

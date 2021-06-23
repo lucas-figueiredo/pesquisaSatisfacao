@@ -196,7 +196,7 @@ export class PesquisaReactiveFormComponent implements OnInit {
 
   clientesCNPJ() {
     //console.log("clientesCNPJv2"+"/"+this.user+"2020@corfio.com");
-    this.db.doc( 'clientesCNPJv3' + '/' + this.user + '@corfio.com').valueChanges().subscribe(
+    this.db.doc( 'clientesCNPJv4' + '/' + this.user + '@corfio.com').valueChanges().subscribe(
       doc => this.cliente = doc['nome']
     );
   }
